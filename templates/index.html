@@ -18,7 +18,7 @@
             <div class="nav-menu" id="navMenu">
                 <ul>
                     <li>
-                      <a href="#" class="link active"><i class='bx bx-info-circle' ></i>AboutModel</a>
+                      <a href="#" class="link active" id="aboutModelLink"><i class='bx bx-info-circle' ></i>AboutModel</a>
                       <ul>
                         <p class="tooltip">Project Focus: Solving Lagos Rental Uncertainty through Mùràmí. <br><br>
                           Searching for suitable apartments, particularly in the bustling city of Lagos, can be a daunting task, compounded by the uncertainty of whether the options align with your budget. Enter MÙRÁMÍ, your guide to a more informed renting experience. By factoring in your preferences for amenities, location, and housing type, Mùràmí offers an approximate annual rent estimate, enabling you to make more informed decisions before finalizing your housing choice. <br> <br>
@@ -30,10 +30,15 @@
                           While adept at historical estimates, this model doesn't adapt to immediate market shifts, and so, current trends might not be fully captured. <br> <br>
                           
                           Note: Data used to train this model will not be updated to reflect evolving trends as they occur.</p>
+
+                          <span class="tooltip-small">Project Focus: Solving Lagos Rental Uncertainty through Mùràmí. <br><br>
+                            
+                            Searching for suitable apartments, particularly in the bustling city of Lagos, can be a daunting task, compounded by the uncertainty of whether the options align with your budget. Enter MÙRÁMÍ, your guide to a more informed renting experience. By factoring in your preferences for amenities, location, and housing type, Mùràmí offers an approximate annual rent estimate, enabling you to make more informed decisions before finalizing your housing choice. <br> <br>Limitations: <br>
+                            While adept at historical estimates, this model doesn't adapt to immediate market shifts, and so, current trends might not be fully captured. <br> <br>Note: Data used to train this model will not be updated to reflect evolving trends as they occur.</span>
+                       
+  
                     </ul>
-                    </li>
-                    <!-- <li><a href="#" class="link">MyFolio</a></li> -->
-                    <!-- <li><a href="#" class="link">Resume</a></li> -->
+                  </li>
                 </ul>
             </div>
             <div class="nav-menu-btn">
@@ -49,9 +54,6 @@
                         <span>Housing In Lagos Nigeria</span>
                         <header>Èkó ò ní bàjé</header>
                     </div>
-                    <br>
-                    <br>
-                    <br>
                     <div class="two-forms">
                         <div class="input-box">
                             <h2>Housing Type</h2>
@@ -210,89 +212,10 @@
 
 
         <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-        <script>
-          $(document).ready(function() {
-            // Toggle active class on click for appropriate screen sizes
-            $(".wrapper ul li a").on("click", function(e) {
-              e.preventDefault();
-              var li = $(this).parent("li");
-              var screenWidth = $(window).width();
-              
-              if (screenWidth >= 280 && screenWidth <= 800) {
-                li.toggleClass("active");
-              }
-            });
-          
-            // Hide tooltip when clicking outside
-            $(document).on("click", function(e) {
-              if (!$(e.target).closest(".tooltip, .wrapper ul li a").length) {
-                $(".wrapper ul li").removeClass("active");
-              }
-            });
-          });
-          </script>
-
-
-
-
-
-        <script>
-
-          function myMenuFunction() {
-            var i = document.getElementById("navMenu");
-
-            if(i.className === "nav-menu") {
-              i.className += " responsive";
-            } else {
-                i.className = "nav-menu";
-            }
-          }
-
-        </script>
-
-        <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              const dropdowns = document.querySelectorAll(".custom-dropdown");
-          
-              dropdowns.forEach(function (dropdown) {
-                const selected = dropdown.querySelector(".dropdown-selected");
-                const options = dropdown.querySelector(".dropdown-options");
-          
-                selected.addEventListener("click", function () {
-                  dropdown.classList.toggle("active");
-                });
-          
-                options.addEventListener("click", function (event) {
-                  if (event.target.classList.contains("dropdown-option")) {
-                    const value = event.target.getAttribute("data-value");
-                    const text = event.target.textContent;
-                    
-                    selected.textContent = text;
-                    dropdown.querySelector("input[type='hidden']").value = value;
-                    dropdown.classList.remove("active");
-                  }
-                });
-              });
-            });
-          </script>
-
-          <script>
-            document.addEventListener("DOMContentLoaded", function () {
-              const tooltipTriggers = document.querySelectorAll(".tooltip-trigger");
-            
-              tooltipTriggers.forEach(function (trigger) {
-                trigger.addEventListener("click", function () {
-                  // Toggle the "active" class to show/hide the tooltip
-                  trigger.classList.toggle("active");
-                });
-              });
-            });
-            </script>            
+        <script src="/static/js/script.js"></script>            
 
         <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-        <!-- <script src="script.js"></script> -->
 
 </body>
 </html>
