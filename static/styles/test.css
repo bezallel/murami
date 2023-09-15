@@ -9,14 +9,10 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
     min-height: 100vh;
     overflow: hidden;
-    background-color: black !important;
     font-family: "Cinzel", serif;
-    background: url("../images/ekoo.jpg");
+    background: black url("../images/ekoo.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
