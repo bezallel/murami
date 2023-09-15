@@ -13,7 +13,7 @@ body {
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    /* color: white; */
+    background-color: black;
     font-family: "Cinzel", serif;
     background: url("../images/ekoo.jpg");
     background-size: cover;
