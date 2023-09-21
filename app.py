@@ -7,22 +7,13 @@ import time
 model = pickle.load(open('house.pkl', 'rb'))
 
 # Mappings for displaying labels
-housing_type_mapping = {0: "Duplex", 1: "Flat/Apartment", 2: "Mini Flat"}
-bedroom_mapping = {1: "1", 2: "2", 3: "3", 4: "4"}
-bathroom_mapping = {1: "1", 2: "2", 3: "3", 4: "4"}
-guest_toilet_mapping = {0: "0", 1: "1", 2: "2"}
-parking_space_mapping = {0: "0", 1: "1", 2: "2", 3: "3", 4: "4"}
+housing_type_mapping = {0: "Duplex", 1: "Flat/Apartment", 2: "Mini Flat", 3: "Selfcon"}
+bedroom_mapping = {1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6"}
+bathroom_mapping = {1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6"}
+guest_toilet_mapping = {0: "0", 1: "1", 2: "2", 3: "3"}
+parking_space_mapping = {0: "0", 1: "1", 2: "2", 3: "3", 4: "4", 5: "5"}
 district_mapping = {
-    0: "Oshodi-Mafoluku", 1: "Abule Egba", 2: "Agbado Ijaiye", 3: "Agbara", 4: "Agege",
-    5: "Ajah", 6: "Alagbado", 7: "Alimosho", 8: "Allen Avenue", 9: "Apapa", 10: "Badagry",
-    11: "Ejigbo", 12: "Festac", 13: "Gbagada", 14: "Idimu", 15: "Ifako", 16: "Igando",
-    17: "Ijora Ebute-Metta", 18: "Iju", 19: "Iju Ishaga", 20: "Ikeja", 21: "Ikeja Adeniyi-Jones",
-    22: "Ikeja G.R.A", 23: "Ikorodu", 24: "Ikotun", 25: "Ikoyi", 26: "Irepo", 27: "Isolo",
-    28: "Isolo Ago-Palace", 29: "Isolo Jakande", 30: "Iyana Ipaja", 31: "Ketu Ikosi",
-    32: "Ketu Ogudu", 33: "Ketu Ojota", 34: "Ketu Shangisha", 35: "Lagos Island",
-    36: "Lekki", 37: "Maryland", 38: "Mushin", 39: "Ogba", 40: "Ojodu Berger",
-    41: "Oke Afa", 42: "Okota", 43: "Oniru", 44: "Opebi", 45: "Oregun",
-    46: "Oshodi", 47: "Oshodi Ajao", 48: "Surulere", 49: "Victoria Island", 50: "Yaba"
+    0: "Abraham Adesanya",1: "Abule Egba",2: "Adeniyi Jones",3: "Agege",4: "Agege-Oko-oba",5: "Ago Palace",6: "Ajah",7: "Ajah-Badore",8: "Alagbado",9: "Alapere",10: "Alimosho",11: "Allen Avenue",12: "Amuwo Odofin",13: "Apapa",14: "Awoyaya",15: "Badagry",16: "Bode Thomas",17: "Ebute Metta",18: "Egbeda",19: "Eko-Atlantic-City",20: "Epe",21: "Festac",22: "Gbagada",23: "Idimu",24: "Ifako",25: "Igando",26: "Iju-Ishaga",27: "Ikeja",28: "Ikeja G.R.A",29: "Ikorodu",30: "Ikotun",31: "Ikoyi",32: "Ilupeju",33: "Isheri",34: "Isheri-Olowora",35: "Isolo",36: "Isolo-Oke-Afa",37: "Iyana Ipaja",38: "Ketu",39: "Kosofe",40: "Lagos Island",41: "Lekki",42: "Lekki Phase 1",43: "Lekki Phase 2",44: "Lekki VGC",45: "Lekki-Admiralty-Way",46: "Lekki-Agungi",47: "Lekki-Chevron",48: "Lekki-Idado",49: "Lekki-Igbo-Efon",50: "Lekki-Ikate",51: "Lekki-Ikota" ,52: "Lekki-Jakande",53: "Lekki-Ologolo",54: "Lekki-Orchid",55: "Lekki-Osapa-London",56: "Magodo",57: "Magodo Phase 2",58: "Maryland",59: "Maryland-Mende",60: "Mushin",61: "Ogba",62: "Ogudu",63: "Ojo",64: "Ojodu Berger",65: "Ojota",66: "Okota",67: "Omole",68: "Omole Phase 2",69: "Onike",70: "Opebi",71: "Opic",72: "Oregun",73: "Oshodi",74: "Oshodi-Ajao",75: "Oshodi-Mafoluku",76: "Sangotedo",77: "Shangisha",78: "Shomolu",79: "Surulere",80: "Victoria Island",81: "Victoria-Island-Oniru",82: "Yaba",83: "Yaba-Akoka",84: "Yaba-Alagomeji"
 }
 
 
