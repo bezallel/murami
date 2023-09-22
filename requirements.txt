@@ -24,4 +24,4 @@ six==1.16.0
 threadpoolctl==2.2.0
 Werkzeug==2.2.2
 wheel==0.37.1
-xgboost==1.5.0
+xgboost==1.6.0
