@@ -3,11 +3,8 @@ import pandas as pd
 import pickle
 import numpy as np
 import time
-import joblib
 
 model = pickle.load(open('house.pkl', 'rb'))
-joblib.dump(model, 'house.pkl')
-loaded_model = joblib.load('house.pkl')
 
 # Mappings for displaying labels
 housing_type_mapping = {0: "Duplex", 1: "Flat/Apartment", 2: "Mini Flat", 3: "Selfcon"}
