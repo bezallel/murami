@@ -50,3 +50,24 @@ def predict():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
+import os
+
+    # Use the 'gunicorn' command to run the app
+    cmd = 'gunicorn'
+    host = '0.0.0.0'  # Use 0.0.0.0 to listen on all available network interfaces
+    port = None       # No need to specify the port
+
+    # Add the --timeout option with your desired timeout value (e.g., 60 seconds)
+    timeout = 60
+
+    # Define the app module and the app instance (app:app)
+    app_module = 'app:app'
+
+    # Form the complete Gunicorn command
+    gunicorn_cmd = f'{cmd} -w 4 -b {host}:{port} --timeout {timeout} {app_module}'
+
+    # Use os.system() to run the Gunicorn command
+    os.system(gunicorn_cmd)
+
+
