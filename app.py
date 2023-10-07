@@ -35,18 +35,14 @@ def main():
 @app.route('/estimate', methods=['POST'])
 def predict():
     try:
-        
         int_features = [int(x) for x in request.form.values()]
         features = [np.array(int_features)]
         prediction = model.predict(features)[0]
-        
         formatted_prediction = '{:,.2f}'.format(prediction)
-        
-        # time.sleep(2)
-
-        return render_template('index.html', prediction_text='Your estimated annual rent based on your selected amenities is ₦{}'.format(formatted_prediction))
+        return jsonify({'prediction_text': 'Your estimated annual rent based on your selected amenities is ₦{}'.format(formatted_prediction)})
     except ValueError:
-        return render_template('index.html', prediction_text='Oops! Looks like you left something out...Please complete your selection.')
-
+        error_message = 'Oops! Looks like you left something out...Please complete your selection.'
+        return jsonify({'error': error_message})
+        
 if __name__ == '__main__':
     app.run(debug=True)
