@@ -238,9 +238,12 @@
             </div>
             <input type="submit" value ="Estimate" id ="estimate" > 
         </form>
-        <div class="result" align="center">
-            <p style="font-size:17px">{{ prediction_text }}</p>
-        </div>
+        <div class="result-card" id="result-card">
+          <div class="result">
+              <p style="font-size: 17px">{{ prediction_text }}</p>
+          </div>
+          <button class="close-button" onclick="closeResultCard()">Close</button>
+      </div>
         <section>
 
           <footer id="author">
