@@ -1,15 +1,17 @@
 from flask import Flask, request, render_template
+from flask import jsonify
 import pandas as pd
 import pickle
 import numpy as np
 import time
+
 
 model = pickle.load(open('house.pkl', 'rb'))
 
 # Mappings for displaying labels
 housing_type_mapping = {0: "Duplex", 1: "Flat/Apartment", 2: "Mini Flat", 3: "Selfcon"}
 bedroom_mapping = {1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6"}
-bathroom_mapping = {0: "0", 1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6"}
+bathroom_mapping = {1: "1", 2: "2", 3: "3", 4: "4", 5: "5", 6: "6"}
 guest_toilet_mapping = {0: "0", 1: "1", 2: "2", 3: "3"}
 parking_space_mapping = {0: "0", 1: "1", 2: "2", 3: "3", 4: "4", 5: "5"}
 district_mapping = {
