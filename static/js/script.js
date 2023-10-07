@@ -81,43 +81,43 @@ function myMenuFunction() {
     });
   });
 
+  
   // Function to show the result card
 function showResultCard(predictionText) {
-  var resultCard = document.querySelector('#result-card');
-  var predictionParagraph = document.querySelector('.result p');
+    var resultCard = document.querySelector('#result-card');
+    var predictionParagraph = document.querySelector('.result p');
 
-  // Set the prediction_text content
-  predictionParagraph.textContent = predictionText;
+    // Set the prediction_text content
+    predictionParagraph.textContent = predictionText;
 
-  resultCard.style.display = 'block';
+    resultCard.style.display = 'block';
 }
 
 // Function to close the result card
 function closeResultCard() {
-  var resultCard = document.querySelector('#result-card');
-  resultCard.style.display = 'none';
+    var resultCard = document.querySelector('#result-card');
+    resultCard.style.display = 'none';
 }
 
 function predict() {
-  var formData = new FormData(document.querySelector('form'));
-  fetch('/estimate', {
-      method: 'POST',
-      body: formData,
-  })
-  .then(response => response.json())
-  .then(data => {
-      if (data.hasOwnProperty('prediction_text')) {
-          showResultCard(data.prediction_text);
-      } else if (data.hasOwnProperty('error')) {
-          showResultCard(data.error);
-      }
-  })
-  .catch(error => {
-      console.error('Error:', error);
-  });
+    var formData = new FormData(document.querySelector('form'));
+    fetch('/estimate', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.hasOwnProperty('prediction_text')) {
+            showResultCard(data.prediction_text);
+        } else if (data.hasOwnProperty('error')) {
+            showResultCard(data.error);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+    });
 
-  // Event listener for the close button (outside the .then() block)
-  var closeButton = document.querySelector('.close-button');
-  closeButton.addEventListener('click', closeResultCard);
+    // Event listener for the close button (outside the .then() block)
+    var closeButton = document.querySelector('.close-button');
+    closeButton.addEventListener('click', closeResultCard);
 }
-
