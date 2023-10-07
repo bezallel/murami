@@ -252,6 +252,30 @@ body {
     margin: 20px auto;
 }
 
+.result-card {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: rgba(5, 4, 4, 0.8);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  z-index: 999; /* Ensure it's on top of other elements */
+  display: none; /* Initially hide the card */
+}
+
+.close-button {
+  background-color: transparent;
+  border: none;
+  color: whitesmoke;
+  cursor: pointer;
+  font-size: 16px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
 
 .wrapper ul li .tooltip{
   position: absolute;
@@ -466,6 +490,9 @@ body {
     top: 300%;
     opacity: 1;
     transition: all 0.5s ease;
+  }
+    .result-card{
+    width: 350px;
   }
 
   /* .wrapper ul li span.tooltip-small{
